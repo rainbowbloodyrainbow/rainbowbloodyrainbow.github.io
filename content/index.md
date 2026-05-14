@@ -1,6 +1,9 @@
 ---
-title: Welcome to Quartz
+title: Welcome
 ---
+# 介绍
 
-This is a blank Quartz installation.
-See the [documentation](https://quartz.jzhao.xyz) for how to get started.
+建立这个网页，是想从我个人的本地笔记里，开辟一个向外分享的窗口。我算是一个分享欲比较强的人，总觉得有些东西只留在硬盘和github私人仓库里未免太可惜，而口口相传效率又太低，于是我决定搬运一些我自己觉得还算实用的工具用法和学习心得到这里，如果碰巧能为你提供一点帮助的话，那很好了。
+
+# 目录
+- [[quartz搭建博客]]
