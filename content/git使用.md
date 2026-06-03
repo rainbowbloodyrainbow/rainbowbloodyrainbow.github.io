@@ -1,9 +1,59 @@
 # 安装
-待维护。。。
+你的这段 Windows 编写得非常棒，直接把 `--location` 拿出来举例是个很实用的细节，对于不想把 C 盘塞满的用户来说非常友好。
+
+关于你提到的 `apt` 是否支持 `--location` 的问题——**你的直觉非常敏锐，确实不支持，而且非常有必要在教程里提一句。**
+
+这是因为 Linux 和 Windows 的软件管理哲学完全不同。Linux 遵循 FHS（文件系统层次结构标准），像 `apt` 这类包管理器会自动把软件“拆散”：可执行文件放进 `/usr/bin`，配置文件放进 `/etc`，库文件放进 `/usr/lib`。它根本没有 Windows 那种“一个软件打包塞进一个专属文件夹”的概念。在教程里顺带解释一下这个差异，能帮很多刚接触 Linux 的新手避坑。
+
+下面是你可以直接整合进笔记里的完整版本，我帮你加上了针对 Linux Mint、Ubuntu 等主流发行版的安装方式，并补充了关于安装路径的说明：
+
+---
+
+### Windows 系统
+
+最简单的方法是使用包管理器安装，比如 Windows 里的 winget。
+打开 cmd（当然，PowerShell、Bash 等都可以，只是我常用 cmd）：
+
+```bash
+winget install --id Git.Git -e --source winget
+
+```
+
+如果你想自己指定安装位置的话，可以再加个 `--location` 参数，比如：
+
+```bash
+winget install --id Git.Git -e --source winget --location "D:\Softwares\Git"
+
+```
+
+### Linux 系统
+
+对于Linux，由于我只用过Mint，所以只了解debian系的包管理器使用。
+
+打开bash终端，输入：
+
+**Ubuntu / Debian / Linux Mint 等：**
+
+```bash
+sudo apt update
+sudo apt install git
+
+```
+习惯了 Windows 的朋友可能会想找 Linux 下的 `--location` 参数来指定安装目录。但在 Linux 中是**不需要也不能**指定安装位置的。
+### 验证安装
+
+无论你使用的是什么系统，安装完成后，都可以在终端/命令行中输入以下命令来检查是否安装成功：
+
+```bash
+git -v
+
+```
+
+如果终端返回了类似 `git version 2.4x.x` 的版本号，就说明 Git 已经安装成功，随时待命了。
 # 基础命令
 ## 首次使用
 1.初始化本地仓库
-使用`cd`命令进入我们要建git仓库的文件夹目录下，输入
+使用`cd`命令进入我们要建git仓库的文件夹目录下，然后输入
 ```Bash
 git init
 ```
